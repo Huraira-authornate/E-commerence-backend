@@ -24,7 +24,11 @@ const cart = require("./Routes/Cart");
 const fav = require("./Routes/Favrout");
 const getProduct = require("./Routes/getProduct");
 const getCart = require("./Routes/getCart");
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 // "Access-Control-Allow-Origin": "*",
 
