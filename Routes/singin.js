@@ -6,7 +6,6 @@ const User = mongoose.model("User");
 // require("../modals/User");
 
 router.post("/singin", async (req, res) => {
-  res.send("hello world");
   const { email, password } = req.body;
   console.log(req.body);
   if (!email || !password) {
@@ -29,6 +28,8 @@ router.post("/singin", async (req, res) => {
       console.log("ooops i am wrong");
     }
   } catch (err) {
+    console.log("i am in try");
+
     return res.status(400).json({ message: "valid crediantiol" });
   }
 });
