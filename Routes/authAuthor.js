@@ -10,7 +10,7 @@ router.post("/singup", async (req, res) => {
   try {
     const user = new User({ email, name, password });
     await user.save();
-    res.send("hello");
+    return res.status(200).json({ message: "Yes I am saved" });
   } catch (err) {
     res.status(422).send(error.message);
   }
