@@ -24,23 +24,7 @@ const cart = require("./Routes/Cart");
 const fav = require("./Routes/Favrout");
 const getProduct = require("./Routes/getProduct");
 const getCart = require("./Routes/getCart");
-app.use(
-  cors({
-    origin: "https://e-commerence-backend.vercel.app",
-  })
-);
-
-// "Access-Control-Allow-Origin": "*",
-
-// "'Access-Control-Allow-Headers: Origin, '"
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin,X-Requested-With,Content-Type,Accept"
-//   );
-//   next();
-// });
+app.use(cors());
 
 app.use(authAuthor);
 app.use(singin);

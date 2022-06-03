@@ -6,6 +6,7 @@ const User = mongoose.model("User");
 // require("../modals/User");
 
 router.post("/singin", async (req, res) => {
+  res.send("hello world");
   const { email, password } = req.body;
   console.log(req.body);
   if (!email || !password) {
@@ -22,6 +23,7 @@ router.post("/singin", async (req, res) => {
 
     if (isPassword) {
       console.log("yes i am true");
+
       return res.status(201).json({ message: "Successfully Registered" });
     } else {
       console.log("ooops i am wrong");
