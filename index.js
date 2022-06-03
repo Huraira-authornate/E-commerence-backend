@@ -37,6 +37,10 @@ mongoose.connection.on("error", (err) => {
   console.log("connected to error", err);
 });
 
+app.get("/", function (req, res) {
+  res.send("hello world");
+});
+
 app.listen(PORT, () => {
   console.log("Server is running on ", PORT);
 });
