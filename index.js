@@ -26,7 +26,7 @@ const getProduct = require("./Routes/getProduct");
 const getCart = require("./Routes/getCart");
 app.use(
   cors({
-    origin: "*",
+    origin: "https://e-commerence-backend.vercel.app",
   })
 );
 
