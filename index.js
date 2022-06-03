@@ -4,6 +4,11 @@ const mongoose = require("mongoose");
 const res = require("express/lib/response");
 const app = express();
 var cors = require("cors");
+const corsOptions = {
+  origin: "https://e-commerence-backend.vercel.app",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
 const PORT = 8080;
 const { MongoDB } = require("./Db");
 
@@ -19,7 +24,7 @@ const cart = require("./Routes/Cart");
 const fav = require("./Routes/Favrout");
 const getProduct = require("./Routes/getProduct");
 const getCart = require("./Routes/getCart");
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(authAuthor);
 app.use(singin);
