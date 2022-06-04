@@ -21,12 +21,16 @@ router.post("/singin", async (req, res) => {
     const isPassword = await user.authenticate(password);
 
     if (isPassword) {
-      console.log("yes i am true");
+      console.log("yes i am true", isPassword);
 
       return res.status(201).json({ message: "Successfully Registered" });
-    } else {
-      console.log("ooops i am wrong");
+    } else if (!isPassword) {
+      console.log("false");
+      return res.status(202).json({ message: "wrong pasword" });
     }
+    // else {
+    //
+    // }
   } catch (err) {
     console.log("i am in try");
 
