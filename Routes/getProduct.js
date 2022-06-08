@@ -8,10 +8,11 @@ router.get("/getProduct", (req, res) => {
   console.log("yes i am in get route");
   Product.find()
     .then((result) => {
-      res.status(200).send({
+      res.status(200).json({
         result,
       });
     })
+
     .catch((err) => {
       console.log(err);
       res.status(500).json({
