@@ -4,6 +4,12 @@ const mongoose = require("mongoose");
 const res = require("express/lib/response");
 const app = express();
 var cors = require("cors");
+
+const corsOptions = {
+  origin: "https://e-commerence-backend.vercel.app",
+  credentials: true,
+  optionSuccessStatus: 200,
+}
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb'}));
 
