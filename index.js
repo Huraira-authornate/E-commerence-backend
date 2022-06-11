@@ -4,11 +4,9 @@ const mongoose = require("mongoose");
 const res = require("express/lib/response");
 const app = express();
 var cors = require("cors");
-// const corsOptions = {
-//   origin: "https://e-commerence-backend.vercel.app",
-//   credentials: true,
-//   optionSuccessStatus: 200,
-// };
+app.use(express.json({limit: '50mb'}));
+app.use(express.urlencoded({limit: '50mb'}));
+
 const PORT = 8080;
 const { MongoDB } = require("./Db");
 
@@ -16,7 +14,9 @@ require("./modals/User");
 require("./modals/Product");
 require("./modals/Cart");
 require("./modals/Favrout");
-app.use(bodyParser.json());
+// app.use(bodyParser.json({limit: '25mb'}));
+// app.use(bodyParser.urlencoded({limit: '25mb', extended: true}));
+
 const authAuthor = require("./Routes/authAuthor");
 const singin = require("./Routes/singin");
 const product = require("./Routes/Product");
@@ -25,6 +25,8 @@ const fav = require("./Routes/Favrout");
 const getProduct = require("./Routes/getProduct");
 const getCart = require("./Routes/getCart");
 app.use(cors());
+// app.use(express.json({limit: '25mb'}));
+// app.use(express.urlencoded({limit: '50mb'}));
 
 app.use(authAuthor);
 app.use(singin);
